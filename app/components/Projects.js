@@ -16,7 +16,7 @@ const projects = [
   {
     title: "SOCIAL HUB",
     description:
-      "An e-commerce platform with product management, shopping cart functionality, and secure payment processing integration.",
+      "A platform that directly connects recruiter with skilled freelancers, or anyone can showcase their skills and expertise to the world .",
     technologies: ["Next.js", "PostgreSQL", "Stripe", "TypeScript"],
     githubUrl: "https://github.com/Nnaval/SocialHub",
     liveUrl: "https://mysocialhub.vercel.app/",
