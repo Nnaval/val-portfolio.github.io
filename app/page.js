@@ -6,6 +6,8 @@ import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 
 export default function Home() {
+  // console.log("Hello mbuze");
+  
   return (
     <>
       <Navbar />

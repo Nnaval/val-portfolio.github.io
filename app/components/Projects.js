@@ -7,11 +7,20 @@ const projects = [
   {
     title: "FUTOVERSE",
     description:
-      "A 3D progressive web application built with modern technologies for students of FUTO. Features include 3D mapping system, real-time chats, virtual stores, and more.",
+      "A 3D progressive web application built with modern technologies for FUTO students. Features include 3D mapping system, real-time chats, virtual stores, and more.",
     technologies: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
     githubUrl: "https://github.com/Nnaval/futoverse",
     liveUrl: "https://www.futoverse.com/",
     image: "/Screenshot 2026-01-21 145352.png",
+  },
+  {
+    title: "SNIPSTASH",
+    description:
+      " A full-stack web app that lets developers save, organize, and quickly retrieve code snippets. Snippets can be shared to anyone via shareable links Built as a productivity tool for managing reusable code across projects and teams.",
+    technologies: ["Next.js", "PostgreSQL", "Stripe", "TypeScript"],
+    githubUrl: "https://github.com/Nnaval/SnipStash",
+    liveUrl: "https://snipstashcode.vercel.app/",
+    image: "/Screenshot 2026-02-16 151958.png",
   },
   {
     title: "SOCIAL HUB",
@@ -22,14 +31,6 @@ const projects = [
     liveUrl: "https://mysocialhub.vercel.app/",
     image: "/Screenshot 2026-01-21 150159.png",
   },
-  // {
-  //   title: "Project Three",
-  //   description:
-  //     "A task management application that helps teams collaborate and track project progress with intuitive drag-and-drop interface.",
-  //   technologies: ["React", "Firebase", "Redux", "Material UI"],
-  //   githubUrl: "https://github.com",
-  //   liveUrl: "https://example.com",
-  // },
 ];
 
 function ProjectCard({ project, index, isVisible }) {
@@ -112,7 +113,7 @@ export default function Projects() {
           setIsVisible(true);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (sectionRef.current) {
@@ -138,8 +139,9 @@ export default function Projects() {
             isVisible ? "animate-fade-in-up delay-100" : "opacity-0"
           }`}
         >
-          Here are some of the projects I&apos;ve worked on. Each project represents
-          different skills and technologies I&apos;ve learned along the way.
+          Here are some of the projects I&apos;ve worked on. Each project
+          represents different skills and technologies I&apos;ve learned along
+          the way.
         </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
