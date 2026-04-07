@@ -8,9 +8,8 @@ import { Resend } from "resend";
 //    RESEND_API_KEY=re_xxxxxxxxxxxx
 //    EMAIL_TO=nnaemeka.obiefuna@gmail.com
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(req) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
   const { name, email, message } = await req.json();
 
   if (!name || !email || !message) {
