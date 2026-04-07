@@ -13,8 +13,32 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center pt-16">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
+      {/* Background glow blobs */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div
+          className="animate-hero-glow absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full"
+          style={{
+            background: "radial-gradient(circle, rgba(124,58,237,0.18) 0%, transparent 70%)",
+          }}
+        />
+        <div
+          className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] rounded-full"
+          style={{
+            background: "radial-gradient(circle, rgba(109,40,217,0.1) 0%, transparent 70%)",
+          }}
+        />
+        {/* Subtle dot grid */}
+        <div
+          className="absolute inset-0 opacity-[0.15]"
+          style={{
+            backgroundImage: "radial-gradient(circle, #7c3aed 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
+          }}
+        />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <p
           className={`text-accent font-mono text-lg sm:text-xl md:text-2xl mb-4 ${
             isLoaded ? "animate-fade-in-down" : "opacity-0"
@@ -29,13 +53,13 @@ export default function Hero() {
         >
           Valentine
         </h1>
-        {/* <h2
-          className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-text-secondary mb-6 ${
+        <h2
+          className={`text-2xl sm:text-3xl md:text-4xl font-bold text-text-secondary mb-6 ${
             isLoaded ? "animate-fade-in-up delay-200" : "opacity-0"
           }`}
         >
           I build things for the web.
-        </h2> */}
+        </h2>
         <p
           className={`text-text-secondary text-lg sm:text-xl max-w-2xl mx-auto mb-10 ${
             isLoaded ? "animate-fade-in-up delay-300" : "opacity-0"

@@ -6,8 +6,10 @@
   --surface: #171717;
   --border: #262626;
   --text-secondary: #a1a1aa;
-  --accent: #3b82f6;
-  --accent-hover: #2563eb;
+  --accent: #7c3aed;
+  --accent-hover: #6d28d9;
+  --accent-glow: rgba(124, 58, 237, 0.25);
+  --accent-subtle: rgba(124, 58, 237, 0.08);
 }
 
 @theme inline {
@@ -139,6 +141,21 @@ section {
   }
 }
 
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes borderGlow {
+  0%, 100% { box-shadow: 0 0 8px var(--accent-glow), 0 0 0 1px var(--accent); }
+  50% { box-shadow: 0 0 20px var(--accent-glow), 0 0 0 1px var(--accent); }
+}
+
+@keyframes heroGlow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.05); }
+}
+
 /* Animation utility classes */
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out forwards;
@@ -181,4 +198,28 @@ section {
 /* Initial state for animated elements */
 .animate-on-scroll {
   opacity: 0;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent 20%, rgba(255,255,255,0.06) 50%, transparent 80%);
+  background-size: 200% 100%;
+  animation: shimmer 2s linear infinite;
+}
+
+.animate-border-glow {
+  animation: borderGlow 2s ease-in-out infinite;
+}
+
+.animate-hero-glow {
+  animation: heroGlow 4s ease-in-out infinite;
+}
+
+/* Section heading accent underline */
+.section-underline {
+  width: 3rem;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 9999px;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
 }
